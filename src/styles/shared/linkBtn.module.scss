@@ -1,0 +1,36 @@
+.variant {
+  &-light {
+    border-radius: 5px;
+    background-color: var(--color-main-lightest);
+    color: var(--color-main-dark);
+  }
+
+  &-default {
+    border-radius: 5px;
+    background-color: var(--color-main-medium);
+    color: var(--color-gray-lightest);
+  }
+}
+
+.size {
+  &-sm {
+    height: var(--spacing-4);
+    padding: 0 var(--spacing-2);
+  }
+
+  &-md {
+    height: var(--spacing-6);
+    padding: 0 var(--spacing-2);
+  }
+
+  &-lg {}
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.disabled {
+  background-color: var(--color-gray-medium-light);
+  color: var(--color-gray-dark);
+}

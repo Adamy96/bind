@@ -9,3 +9,11 @@ a {
   padding: 0;
   font-family: var(--font-primary-family);
 }
+
+html,
+body,
+body>div:first-child,
+div#__next,
+div#__next>div {
+  height: 100%;
+}

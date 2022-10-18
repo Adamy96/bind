@@ -1,0 +1,20 @@
+.navigation {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-2) 0 var(--spacing-2);
+  background-color: var(--color-background);
+  color: var(--color-gray-lightest);
+  position: fixed;
+  display: flex;
+
+  .content {
+    margin-left: var(--spacing-1);
+  }
+
+  .title {
+    color: var(--color-main-lightest);
+  }
+
+  .subtitle {
+    color: var(--color-gray-medium-dark);
+  }
+}

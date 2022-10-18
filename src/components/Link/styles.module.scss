@@ -1,0 +1,28 @@
+.link {
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.align {
+  &-left {
+    justify-content: left;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-inherit {
+    justify-content: inherit
+  }
+
+  &-justify {
+    justify-content: justify
+  }
+
+  &-right {
+    justify-content: right;
+  }
+}
