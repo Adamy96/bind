@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    margin-bottom: var(--spacing-half);
+  }
+
+  .input {
+    padding: var(--spacing-2);
+    font-size: var(--font-size-body);
+    color: var(--color-gray-lightest);
+    border-radius: 5px;
+    border: 0;
+    background-color: var(--color-field-bg-default);
+    outline: none;
+
+    &:focus {
+      background-color: var(--color-field-bg-selected);
+    }
+  }
+}

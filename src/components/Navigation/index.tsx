@@ -23,7 +23,7 @@ const Navigation = ({ navigationHeight, setNavigationHeight }: Props) => {
   useEffect(() => {
     const clientHeight = navRef?.current?.clientHeight
     if (clientHeight && clientHeight !== navigationHeight) {
-      setNavigationHeight(clientHeight)
+      setNavigationHeight(clientHeight - 1)
     }
   }, [navRef, navHeader?.title, navHeader?.subtitle])
 

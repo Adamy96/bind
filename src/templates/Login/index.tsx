@@ -1,9 +1,10 @@
+import { Login as LoginForm } from '@components/Forms'
 import styles from './styles.module.scss'
 
 const Login = () => {
   return (
     <div className={styles.login}>
-      <p>Login</p>
+      <LoginForm />
     </div>
   )
 }
