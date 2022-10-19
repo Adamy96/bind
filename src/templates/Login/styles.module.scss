@@ -1,6 +1,23 @@
-.login { 
+@import 'src/styles/mixins.scss';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--color-background);
   color: var(--color-gray-lightest);
   height: 100%;
-  padding: var(--spacing-5) var(--padding-page) var(--padding-page);
+  padding: var(--spacing-5) var(--padding-page) var(--spacing-4);
+
+  .createAccount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .link {
+    @include typographyButtonSemiBold;
+    color: var(--color-main-light);
+  }
 }
+

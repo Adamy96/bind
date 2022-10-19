@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Typography } from '@components'
 import styles from './styles.module.scss'
 
@@ -12,6 +12,8 @@ const Input = ({
   onChange,
   className = ''
 }: Props) => {
+  const [showPassword, setShowPassword] = useState(false)
+
   return (
     <div className={`${styles.container} ${className}`}>
       {label && (
@@ -19,15 +21,17 @@ const Input = ({
           {label}
         </Typography>
       )}
-      <input
-        name={name}
-        type={type}
-        placeholder={placeholder || ''}
-        value={value}
-        onChange={(e) => onChange(e)}
-        autoComplete={autoComplete}
-        className={styles.input}
-      />
+      <div className={styles.inputContainer}>
+        <input
+          name={name}
+          type={type}
+          placeholder={placeholder || ''}
+          value={value}
+          onChange={(e) => onChange(e)}
+          autoComplete={autoComplete}
+          className={styles.input}
+        />
+      </div>
     </div>
   )
 }

@@ -6,7 +6,11 @@
     margin-bottom: var(--spacing-half);
   }
 
+  .inputContainer {
+  }
+
   .input {
+    width: 100%;
     padding: var(--spacing-2);
     font-size: var(--font-size-body);
     color: var(--color-gray-lightest);

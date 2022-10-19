@@ -1,3 +1,30 @@
+@import 'src/styles/mixins.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
 .input:first-of-type {
   margin-bottom: var(--spacing-3);
+}
+
+.submitBtn {
+  margin: var(--spacing-4) 0 var(--spacing-2);
+}
+
+.forgotPassword {
+  @include typographyButtonSemiBold;
+  margin-top: var(--spacing-2);
+  align-self: flex-end;
+  color: var(--color-main-light);
+}
+
+.socialContainer {
+  display: flex;
+  margin-top: var(--spacing-2);
+
+  button:first-of-type {
+    margin-right: var(--spacing-2);
+  }
 }

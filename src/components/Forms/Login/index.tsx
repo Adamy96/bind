@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Input } from '@components'
+import Link from 'next/link'
+import { Button, Typography, Input } from '@components'
 import styles from './styles.module.scss'
 
 const Login = ({ onSubmit }: Props) => {
@@ -15,7 +16,7 @@ const Login = ({ onSubmit }: Props) => {
   }
 
   return (
-    <form>
+    <form className={styles.form}>
       <Input
         label='Email'
         name='email'
@@ -32,6 +33,40 @@ const Login = ({ onSubmit }: Props) => {
         onChange={handleFormChange}
         className={styles.input}
       />
+      <Link href='/password'>
+        <a className={styles.forgotPassword}>
+          Esqueci minha senha
+        </a>
+      </Link>
+      <Button
+        variant='default'
+        size='md'
+        fullWidth
+        disabled={form.email === '' || form.password === ''}
+        onClick={(e) => e.preventDefault()}
+        className={styles.submitBtn}
+      >
+        <Typography variant='button'>
+          Entrar
+        </Typography>
+      </Button>
+
+      <Typography variant='body' align='center'>
+        Ou faça login por:
+      </Typography>
+
+      <div className={styles.socialContainer}>
+        <Button variant='light' size='sm' onClick={() => null} fullWidth>
+          <Typography variant='button' align='center' weight='bold'>
+            Facebook
+          </Typography>
+        </Button>
+        <Button variant='light' size='sm' onClick={() => null} fullWidth>
+          <Typography variant='button' align='center' weight='bold'>
+            Google
+          </Typography>
+        </Button>
+      </div>
     </form>
   )
 }
