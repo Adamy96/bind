@@ -11,7 +11,7 @@ const NavigationLayout = ({ router, children }: Props) => {
         navigationHeight={navigationHeight}
         setNavigationHeight={setNavigationHeight}
       />
-      <div style={{height: '100%', paddingTop: navigationHeight}}>
+      <div style={{height: '100vh', paddingTop: navigationHeight}}>
         {children}
       </div>
     </div>
