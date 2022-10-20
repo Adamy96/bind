@@ -1,2 +1,6 @@
 export { default as ArrowLeft } from './arrowLeft.svg'
+export { default as EyeClosed } from './eyeClosed.svg'
+export { default as EyeOpen } from './eyeOpen.svg'
+export { default as Facebook } from './facebook.svg'
+export { default as Google } from './google.svg'
 export { default as LogoPurple } from './logoPurple.svg'

@@ -3,3 +3,9 @@
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-semiBold);
 }
+
+@mixin typographyButtonBold {
+  font-family: var(--font-primary-family);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+}

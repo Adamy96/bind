@@ -8,11 +8,12 @@ const Arrow = (props: IIcon) => {
 
   return (
     <ArrowLeft
-      className={styles[name]}
+      className={`${styles[name]} ${props.className}`}
       style={{
         stroke: `var(${getColor(color)})`,
         strokeWidth: "2"
       }}
+      onClick={props.onClick}
     />
   )
 }

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Navigation } from '@components'
 
-const NavigationLayout = ({ children }: Props) => {
+const NavigationLayout = ({ router, children }: Props) => {
   const [navigationHeight, setNavigationHeight] = useState(0)  
 
   return (
     <div>
       <Navigation
+        router={router}
         navigationHeight={navigationHeight}
         setNavigationHeight={setNavigationHeight}
       />
@@ -18,6 +19,7 @@ const NavigationLayout = ({ children }: Props) => {
 }
 
 interface Props {
+  router: any
   children: React.ReactNode
 }
 

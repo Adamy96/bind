@@ -16,8 +16,9 @@
   }
   
   .link {
-    @include typographyButtonSemiBold;
+    @include typographyButtonBold;
     color: var(--color-main-light);
+    margin-top: var(--spacing-1);
   }
 }
 

@@ -7,6 +7,14 @@
   }
 
   .inputContainer {
+    position: relative;
+
+    .eyeIcon {
+      position: absolute;
+      right: var(--spacing-2);
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   .input {

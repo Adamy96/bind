@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Typography } from '@components'
+import { Typography, Icon } from '@components'
 import styles from './styles.module.scss'
 
 const Input = ({
@@ -22,9 +22,17 @@ const Input = ({
         </Typography>
       )}
       <div className={styles.inputContainer}>
+        {type === 'password' && (
+          <Icon
+            name={showPassword ? 'eyeClosed' : 'eyeOpen'}
+            color='mainLight'
+            onClick={() => setShowPassword(!showPassword)}
+            className={styles.eyeIcon}
+          />
+        )}
         <input
           name={name}
-          type={type}
+          type={showPassword ? 'text' : type}
           placeholder={placeholder || ''}
           value={value}
           onChange={(e) => onChange(e)}

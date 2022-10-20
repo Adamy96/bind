@@ -24,7 +24,17 @@
   display: flex;
   margin-top: var(--spacing-2);
 
-  button:first-of-type {
+  .socialBtn:first-of-type {
     margin-right: var(--spacing-2);
+  }
+
+  .socialBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: var(--spacing-1);
+    }
   }
 }

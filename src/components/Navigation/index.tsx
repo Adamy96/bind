@@ -5,8 +5,8 @@ import { useNavigation } from '@hooks'
 import { Icon, Typography } from '@components'
 import styles from './styles.module.scss'
 
-const Navigation = ({ navigationHeight, setNavigationHeight }: Props) => {
-  const router = useRouter()
+const Navigation = ({ router, navigationHeight, setNavigationHeight }: Props) => {
+  // const router = useRouter()
   const navRef = useRef<HTMLDivElement | null>(null)
   const { getNavHeader, getNavigationPaths } = useNavigation(router)
   const navigationPaths = getNavigationPaths()
@@ -53,6 +53,7 @@ const Navigation = ({ navigationHeight, setNavigationHeight }: Props) => {
 }
 
 interface Props {
+  router: any
   navigationHeight: number,
   setNavigationHeight: (e: number) => void
 }

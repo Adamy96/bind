@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { Button, Typography, Input } from '@components'
+import { Button, Typography, Icon, Input } from '@components'
 import styles from './styles.module.scss'
 
 const Login = ({ onSubmit }: Props) => {
@@ -46,7 +46,7 @@ const Login = ({ onSubmit }: Props) => {
         onClick={(e) => e.preventDefault()}
         className={styles.submitBtn}
       >
-        <Typography variant='button'>
+        <Typography variant='button' weight='bold'>
           Entrar
         </Typography>
       </Button>
@@ -56,12 +56,26 @@ const Login = ({ onSubmit }: Props) => {
       </Typography>
 
       <div className={styles.socialContainer}>
-        <Button variant='light' size='sm' onClick={() => null} fullWidth>
+        <Button
+          variant='light'
+          size='sm'
+          onClick={() => null}
+          fullWidth
+          className={styles.socialBtn}
+        >
+          <Icon name='facebook' color='mainDark' />
           <Typography variant='button' align='center' weight='bold'>
             Facebook
           </Typography>
         </Button>
-        <Button variant='light' size='sm' onClick={() => null} fullWidth>
+        <Button
+          variant='light'
+          size='sm'
+          onClick={() => null}
+          fullWidth
+          className={styles.socialBtn}
+        >
+          <Icon name='google' color='mainDark' />
           <Typography variant='button' align='center' weight='bold'>
             Google
           </Typography>

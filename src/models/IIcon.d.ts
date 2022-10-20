@@ -3,8 +3,13 @@ interface IIcon {
     'arrowLeft' |
     'arrowRight' |
     'arrowUp' |
-    'arrowDown'
+    'arrowDown' |
+    'eyeOpen' |
+    'eyeClosed' |
+    'facebook' |
+    'google'
   )
   color: IColors
   onClick?: (e: any) => any
+  className?: string = ''
 }
