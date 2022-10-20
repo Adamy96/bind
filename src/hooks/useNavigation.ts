@@ -13,6 +13,11 @@ const useNavigation = (router: any) => {
           title: 'Criar conta',
           subtitle: 'Preencha com seus dados abaixo e bora!'
         }
+      case '/terms':
+        return {
+          title: 'Termos e condições',
+          subtitle: 'Confira abaixo os termos e condições'
+        }
       default:
         return {
           title: '',
@@ -22,7 +27,7 @@ const useNavigation = (router: any) => {
   }
 
   const getNavigationPaths = () => {
-    return ['/login', '/register']
+    return ['/login', '/register', '/terms']
   }
 
   return { getNavHeader, getNavigationPaths }

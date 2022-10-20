@@ -1,5 +1,7 @@
+import { Register } from '@templates'
+
 const RegisterPage = () => {
-  return <p>Placeholder</p>
+  return <Register />
 }
 
 export default RegisterPage

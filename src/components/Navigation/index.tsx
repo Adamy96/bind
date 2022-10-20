@@ -1,12 +1,10 @@
 
 import { useRef, useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 import { useNavigation } from '@hooks'
 import { Icon, Typography } from '@components'
 import styles from './styles.module.scss'
 
 const Navigation = ({ router, navigationHeight, setNavigationHeight }: Props) => {
-  // const router = useRouter()
   const navRef = useRef<HTMLDivElement | null>(null)
   const { getNavHeader, getNavigationPaths } = useNavigation(router)
   const navigationPaths = getNavigationPaths()

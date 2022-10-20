@@ -1,0 +1,38 @@
+@import 'src/styles/mixins.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-bottom: var(--spacing-3);
+}
+
+.submitBtn {
+  margin: var(--spacing-4) 0 var(--spacing-2);
+}
+
+.linkTerms {
+  @include typographyCaptionRegular;
+  color: var(--color-main-light);
+}
+
+.socialContainer {
+  display: flex;
+  margin-top: var(--spacing-2);
+
+  .socialBtn:first-of-type {
+    margin-right: var(--spacing-2);
+  }
+
+  .socialBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: var(--spacing-1);
+    }
+  }
+}

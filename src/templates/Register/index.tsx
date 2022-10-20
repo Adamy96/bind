@@ -1,19 +1,19 @@
 import Link from 'next/link'
-import { Login as LoginForm } from '@components/Forms'
+import { Register as RegisterForm } from '@components/Forms'
 import { Typography } from '@components'
 import styles from './styles.module.scss'
 
-const Login = () => {
+const Register = () => {
   return (
-    <div className={styles.login}>
-      <LoginForm />
+    <div className={styles.register}>
+      <RegisterForm />
       <div className={styles.bottomContainer}>
         <Typography variant='body' align='center'>
-          Não tem uma conta?
+          Já possui uma conta?
         </Typography>
-        <Link href='/register' replace>
+        <Link href='/login' replace>
           <a className={styles.link}>
-            Criar conta agora
+            Faça o login!
           </a>
         </Link>
       </div>
@@ -21,4 +21,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
