@@ -6,7 +6,7 @@
   justify-content: space-between;
   background-color: var(--color-background);
   color: var(--color-gray-lightest);
-  height: 100%;
+  flex: 1;
   padding: var(--spacing-5) var(--padding-page) var(--spacing-4);
 
   .createAccount {

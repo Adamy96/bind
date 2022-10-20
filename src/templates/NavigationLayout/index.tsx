@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Navigation } from '@components'
+import styles from './styles.module.scss'
 
 const NavigationLayout = ({ router, children }: Props) => {
   const [navigationHeight, setNavigationHeight] = useState(0)  
@@ -11,7 +12,10 @@ const NavigationLayout = ({ router, children }: Props) => {
         navigationHeight={navigationHeight}
         setNavigationHeight={setNavigationHeight}
       />
-      <div style={{height: '100%', paddingTop: navigationHeight}}>
+      <div
+        style={{paddingTop: navigationHeight}}
+        className={styles.childrenContainer}
+      >
         {children}
       </div>
     </div>
