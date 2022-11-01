@@ -5,7 +5,7 @@ import { useButton } from '@hooks'
 const Button = (props: IButton) => {
   const { resolveStyles } = useButton()
   const componentClasses = resolveStyles(props)
-  const { children, onClick } = props
+  const { children, onClick, type } = props
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
@@ -13,7 +13,7 @@ const Button = (props: IButton) => {
   }
 
   return (
-    <button className={componentClasses} onClick={(e) => handleClick(e)}>
+    <button className={componentClasses} onClick={(e) => handleClick(e)} type={type}>
       {children}
     </button>
   )

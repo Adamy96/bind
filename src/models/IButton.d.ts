@@ -5,5 +5,6 @@ interface IButton {
   disabled?: boolean
   size: 'sm' | 'md' | 'lg'
   fullWidth?: boolean,
-  onClick: (e?) => any
+  onClick: (e?) => any,
+  type?: 'submit' | 'button' = 'button'
 }

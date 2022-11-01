@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Typography, Icon } from '@components'
+import { Field } from 'formik'
 import styles from './styles.module.scss'
 
 const Input = ({
@@ -9,7 +10,6 @@ const Input = ({
   placeholder,
   name,
   value,
-  onChange,
   className = ''
 }: Props) => {
   const [showPassword, setShowPassword] = useState(false)
@@ -30,12 +30,11 @@ const Input = ({
             className={styles.eyeIcon}
           />
         )}
-        <input
+        <Field
           name={name}
           type={showPassword ? 'text' : type}
           placeholder={placeholder || ''}
-          value={value}
-          onChange={(e) => onChange(e)}
+          // value={value}
           autoComplete={autoComplete}
           className={styles.input}
         />
@@ -51,7 +50,7 @@ interface Props {
   placeholder?: string
   name: string
   value: string
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  // onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   className?: string
 }
 
