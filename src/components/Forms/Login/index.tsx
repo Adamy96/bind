@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button, Typography, Icon, Input } from '@components'
+import { useForm } from '@hooks'
 import styles from './styles.module.scss'
 
+import * as yup from 'yup'
+
 const Login = ({ onSubmit }: Props) => {
+  const { parseErrors } = useForm()
   const [form, setForm] = useState({
     email: '',
     password: ''
@@ -15,8 +19,36 @@ const Login = ({ onSubmit }: Props) => {
     setForm(updatedForm);
   }
 
+  const validate = async () => {
+    const schema = yup.object().shape({
+      email: yup.string()
+        .required('Preencha com o seu email req')
+        .email('Insira um email válido email'),
+      password: yup.string()
+        .required('A senha deve conter pelo menos 8 caracteres req')
+        .min(8, 'A senha deve conter pelo menos 8 caracteres min')
+    })
+
+    try {
+      await schema.validate(form, { abortEarly: false })
+      return true
+    } catch (err: any) {
+      const parsedErrors = parseErrors(form, err)
+      console.log(parsedErrors)
+
+      return false;
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log('handleSubmit')
+    await validate()
+    console.log('afterSubmit')
+    e.preventDefault()
+  }
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={(e) => handleSubmit(e)} noValidate>
       <Input
         label='Email'
         name='email'
@@ -24,6 +56,7 @@ const Login = ({ onSubmit }: Props) => {
         value={form.email}
         onChange={handleFormChange}
         className={styles.input}
+        error='Error message'
       />
       <Input
         label='Senha'
@@ -42,9 +75,10 @@ const Login = ({ onSubmit }: Props) => {
         variant='default'
         size='md'
         fullWidth
-        disabled={form.email === '' || form.password === ''}
-        onClick={(e) => e.preventDefault()}
+        // disabled={form.email === '' || form.password === ''}
+        // onClick={(e) => e.preventDefault()}
         className={styles.submitBtn}
+        type='submit'
       >
         <Typography variant='button' weight='bold'>
           Entrar

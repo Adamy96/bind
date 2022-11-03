@@ -10,7 +10,8 @@ const Input = ({
   name,
   value,
   onChange,
-  className = ''
+  className = '',
+  error
 }: Props) => {
   const [showPassword, setShowPassword] = useState(false)
 
@@ -40,6 +41,11 @@ const Input = ({
           className={styles.input}
         />
       </div>
+      {error && (
+        <Typography variant='caption' className={styles.error}>
+          {error}
+        </Typography>
+      )}
     </div>
   )
 }
@@ -53,6 +59,7 @@ interface Props {
   value: string
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   className?: string
+  error?: string | undefined
 }
 
 export default Input
